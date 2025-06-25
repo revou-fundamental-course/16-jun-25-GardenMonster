@@ -4,8 +4,88 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Revou Project</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    
+    <div class="container">
+        <header>
+            <h1>Kalkulator Segitiga</h1>
+            <p>Hitung luas dan keliling segitiga dengan mudah</p>
+            
+            <div class="tabs">
+                <div class="tab active" data-tab="luas">Luas Segitiga</div>
+                <div class="tab" data-tab="keliling">Keliling Segitiga</div>
+            </div>
+        </header>
+
+        <div class="content">
+            <!-- Tab Luas Segitiga -->
+            <div class="tab-content active" id="luas-content">
+                <svg class="triangle-img" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                    <polygon points="50,10 90,90 10,90" fill="none" stroke="#4361ee" stroke-width="2"/>
+                    <text x="50" y="40" text-anchor="middle" fill="#4361ee" font-size="8">Alas (a)</text>
+                    <text x="20" y="70" text-anchor="middle" fill="#4361ee" font-size="8">Tinggi (t)</text>
+                    <text x="80" y="70" text-anchor="middle" fill="#4361ee" font-size="8">Sisi Miring</text>
+                </svg>
+                
+                <div class="form-group">
+                    <label for="alas">Alas Segitiga (a)</label>
+                    <input type="number" id="alas" placeholder="Masukkan panjang alas dalam cm">
+                </div>
+                
+                <div class="form-group">
+                    <label for="tinggi">Tinggi Segitiga (t)</label>
+                    <input type="number" id="tinggi" placeholder="Masukkan tinggi dalam cm">
+                </div>
+                
+                <button id="hitung-luas">Hitung Luas</button>
+                
+                <div class="result" id="hasil-luas">
+                    <h3>Hasil Perhitungan Luas</h3>
+                    <p>Alas (a) = <span id="nilai-alas">0</span> cm</p>
+                    <p>Tinggi (t) = <span id="nilai-tinggi">0</span> cm</p>
+                    <p>Rumus Luas Segitiga: <span class="formula">L = ½ × a × t</span></p>
+                    <p>Hasil: <span id="nilai-luas">0</span> cm²</p>
+                </div>
+            </div>
+            
+            <!-- Tab Keliling Segitiga -->
+            <div class="tab-content" id="keliling-content">
+                <svg class="triangle-img" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                    <polygon points="50,10 90,90 10,90" fill="none" stroke="#3f37c9" stroke-width="2"/>
+                    <text x="30" y="30" text-anchor="middle" fill="#3f37c9" font-size="8">Sisi A</text>
+                    <text x="70" y="30" text-anchor="middle" fill="#3f37c9" font-size="8">Sisi B</text>
+                    <text x="50" y="80" text-anchor="middle" fill="#3f37c9" font-size="8">Sisi C</text>
+                </svg>
+                
+                <div class="form-group">
+                    <label for="sisi-a">Panjang Sisi A</label>
+                    <input type="number" id="sisi-a" placeholder="Masukkan panjang sisi A dalam cm">
+                </div>
+                
+                <div class="form-group">
+                    <label for="sisi-b">Panjang Sisi B</label>
+                    <input type="number" id="sisi-b" placeholder="Masukkan panjang sisi B dalam cm">
+                </div>
+                
+                <div class="form-group">
+                    <label for="sisi-c">Panjang Sisi C</label>
+                    <input type="number" id="sisi-c" placeholder="Masukkan panjang sisi C dalam cm">
+                </div>
+                
+                <button id="hitung-keliling">Hitung Keliling</button>
+                
+                <div class="result" id="hasil-keliling">
+                    <h3>Hasil Perhitungan Keliling</h3>
+                    <p>Sisi A = <span id="nilai-sisi-a">0</span> cm</p>
+                    <p>Sisi B = <span id="nilai-sisi-b">0</span> cm</p>
+                    <p>Sisi C = <span id="nilai-sisi-c">0</span> cm</p>
+                    <p>Rumus Keliling Segitiga: <span class="formula">K = a + b + c</span></p>
+                    <p>Hasil: <span id="nilai-keliling">0</span> cm</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
 </body>
 </html>
